@@ -63,3 +63,29 @@ try:
     print(persona ['DNI'])
 except KeyError as e:
     print('La clave no existe')
+
+
+# AFTER CLASE 3 #
+
+usuarios ={
+    "Ana":{"edad":56},
+    "Jose":{"edad":40},
+    "Javo":{"edad":49}
+}
+
+def pedir_nombre():
+    try:
+        nombre = input('Ingrese el Nombre: ')
+        edad = usuarios [nombre]["edad"]
+        print(f'{nombre} tiene {edad} años')
+    except KeyError:
+        print(f'ERROR : No se encontró la edad para ese nombre')
+
+pedir_nombre()
+
+
+try:
+    edad = int(input('Ingresa tu edad: '))
+    print(f'El año que viene tendrás {edad + 1} años')
+except ValueError:
+    print('Deves ingresar solo valores uméricos')
